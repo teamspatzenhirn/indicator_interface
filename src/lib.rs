@@ -6,7 +6,7 @@ use serde::Serialize;
 pub use postcard;
 
 #[repr(C)]
-#[derive(Serialize)]
+#[derive(Serialize, Clone)]
 pub enum IndicatorDuration {
     INFINITE,
     FINITE(u16),
@@ -22,7 +22,7 @@ pub enum IndicatorState {
 }
 
 #[repr(C)]
-#[derive(Serialize)]
+#[derive(Serialize, Clone)]
 pub enum RustIndicatorCommand {
     OFF,
     LEFT(IndicatorDuration),
